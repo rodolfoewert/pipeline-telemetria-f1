@@ -6,7 +6,8 @@ cursor = conexion.cursor()
 consulta_analitica = '''
     SELECT piloto, AVG(velocidad_max) AS velocidad_promedio
     FROM telemetria
-    GROUP BY piloto;
+    GROUP BY piloto
+    ORDER BY velocidad_promedio DESC;
 '''
 
 cursor.execute(consulta_analitica)
